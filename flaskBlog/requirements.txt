@@ -1,0 +1,6 @@
+pip install flask
+pip install flask_sqlalchemy 
+pip install flask-bcrypt
+pip install flask_login
+pip install PyMySQL
+pip install flask-wtf	

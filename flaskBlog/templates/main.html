@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+
+<embed src="http://localhost:5000/static/Manifesto.pdf" width="500" height="375">
+
+
+<form method="POST" enctype="multipart/form-data" action="/upload">
+  <input type="file" name="file[]" multiple="">
+  <input type="submit" value="add">
+</form>
+
+
+<div class="panel-footer">
+  <label for="input-2" class="control-label">My Rating:</label>
+<input id="stars_123}}" name="input-2" class="rating rating-loading" data-min="0" data-max="10" data-step="0.1" data-stars="10" data-size="xs"onchange="updateStars('123')" >
+</div>
+<script type="text/javascript">
+    function updateStars(id) {
+
+       var rating = document.getElementById("stars_" + id).value;
+      console.log("rating is : " + rating);
+       $.ajax({
+           url : '/rate_movie',
+           headers: {"Content-Type": "application/json"},
+           type : 'POST',
+           dataType: 'json',
+           data : JSON.stringify{'id': 'id', 'rating': rating}
+           });
+};
+</script>
+
+{% endblock content %}
