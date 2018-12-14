@@ -1,0 +1,9 @@
+ALTER TABLE post MODIFY content text CHARACTER SET utf8;
+
+ALTER TABLE post CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+
+
+CREATE USER 'quizuser'@'localhost' IDENTIFIED BY 'kumar';
+
+CREATE USER 'quizuser'@'localhost';
+GRANT ALL PRIVILEGES ON quizdb.* To 'quizuser'@'localhost' IDENTIFIED BY 'kumar';

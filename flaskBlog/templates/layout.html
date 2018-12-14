@@ -18,9 +18,7 @@
 
 	 <header class="site-header">
 
-
-
- <nav class="navbar navbar-expand-md fixed-top" style="background-color: #5a6065;">
+ <nav class="navbar navbar-expand-md fixed-top" style="background-color: #5a6065;">	
  	<div class="container-fluid">
 		<a class="navbar-brand" href="/"><img src="{{ url_for('static',
        filename='nav/logo.png')}}"></a>
@@ -31,29 +29,22 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item-active">
-					<a class="nav-link" href="{{ url_for('home') }}">Home</a>
+					<a class="nav-link" href="{{ url_for('main.home') }}">Home</a>
 				</li>				
 				{% if current_user.is_authenticated %}
-
 				<li class="nav-item-active">
-					<a class="nav-link" href="{{ url_for('activity') }}">Today's activity</a>
+					<a class="nav-link" href="{{ url_for('users.logout') }}">Logout</a>
 				</li>
 				<li class="nav-item-active">
-					<a class="nav-link" href="{{ url_for('new_post') }}">New post</a>
-				</li>
-				<li class="nav-item-active">
-					<a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
-				</li>
-				<li class="nav-item-active">
-					<a class="nav-link" href="{{ url_for('account') }}">Account</a>
+					<a class="nav-link" href="{{ url_for('users.account') }}">Account</a>
 				</li>
 
             	{% else %}
 				<li class="nav-item-active">
-					<a class="nav-link" href="{{ url_for('login') }}">Login</a>
+					<a class="nav-link" href="{{ url_for('users.login') }}">Login</a>
 				</li>
 				<li class="nav-item-active">
-					<a class="nav-link" href="{{ url_for('register') }}">Register</a>
+					<a class="nav-link" href="{{ url_for('users.register') }}">Register</a>
 				</li>
 				{% endif %}
 				

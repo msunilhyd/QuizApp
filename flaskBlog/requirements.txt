@@ -4,3 +4,11 @@ pip install flask-bcrypt
 pip install flask_login
 pip install PyMySQL
 pip install flask-wtf	
+
+
+Embed Youtube video :
+https://stackoverflow.com/questions/42255924/embedded-youtube-video-jinja2-flask
+
+
+Python Music : 
+https://www.youtube.com/watch?v=Qe7JrEDUBlA
